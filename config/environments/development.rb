@@ -12,7 +12,7 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
-  ENV['DATABASE_URL'] ||= "mysql://root:BtjyqElnssfAkWYsYIKKdvesIlVpUcyJ@autorack.proxy.rlwy.net:35532/railway"
+  ENV['DATABASE_URL'] ||= "your_database_url"
   # Enable server timing.
   config.server_timing = true
 
