@@ -12,12 +12,18 @@ class StudentsController < ApplicationController
 
 
   def FindBySBD
+
+    unless params[:sbd].present? && params[:sbd].match?(/\A\d+\z/)
+      @error = 'SBD must contain only numbers'
+      render :find_student and return
+    end
+
     @student = Student.find_by(sbd: params[:sbd])
 
     if @student
       render :find_student
     else
-      @error = 'Không tìm thấy'
+      @error = 'Not found'
       render :find_student
     end
   end
@@ -55,7 +61,7 @@ class StudentsController < ApplicationController
     if @top_10_students
       render :dashboard
     else
-      @error = 'Không tìm thấy'
+      @error = 'Not found'
       render :dashboard
     end
   

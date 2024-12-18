@@ -3,6 +3,8 @@ require 'activerecord-import/base'
 
 csv_file_path = "db/data/diem_thi_thpt_2024.csv"
 
+batch_size = 2000
+
 students = []
 
 CSV.foreach(csv_file_path, headers: true) do |row|
@@ -19,6 +21,11 @@ CSV.foreach(csv_file_path, headers: true) do |row|
     gdcd: row['gdcd'],
     ma_ngoai_ngu: row['ma_ngoai_ngu']
   )
+
+  if students.size >= batch_size
+    Student.import students
+    students = []
+  end
 end
 
-Student.import students
+Student.import students unless students.empty?

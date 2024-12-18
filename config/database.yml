@@ -12,14 +12,15 @@
 default: &default
   adapter: mysql2
   encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username:
-  password:
+  pool: 5
+  username: root
+  password: BtjyqElnssfAkWYsYIKKdvesIlVpUcyJ
   socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
-  database: mysql_development
+  url: mysql://root:BtjyqElnssfAkWYsYIKKdvesIlVpUcyJ@autorack.proxy.rlwy.net:35532/railway
+  # database: mysql_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -51,9 +52,9 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: mysql_production
-    username: mysql
-    password: <%= ENV["MYSQL_DATABASE_PASSWORD"] %>
+    url: mysql://root:BtjyqElnssfAkWYsYIKKdvesIlVpUcyJ@autorack.proxy.rlwy.net:35532/railway
+    username: root
+    password: BtjyqElnssfAkWYsYIKKdvesIlVpUcyJ
   cache:
     <<: *primary_production
     database: mysql_production_cache
