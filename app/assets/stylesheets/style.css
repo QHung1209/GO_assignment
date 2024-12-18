@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.container {
+    height: 100vh;
+}
+
+.SideBar{
+    width: 250px; 
+    background: linear-gradient(to bottom, yellow, green); 
+    padding: 20px;
+    font-size: 20px;
+    height: 100vh;
+}
+
+.SideBar h3 {
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.SideBar ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.SideBar li {
+    margin-bottom: 30px;
+}
+
+.SideBar a {
+    color: black;
+    text-decoration: none;
+}
+
+.main {
+    background-color: #f8f9fa; 
+    display: flex;
+}
+
+.title {
+    background-color: #1a2d84;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.maininfo{
+    width: 80%;
+    margin-left: 30px;
+    
+}
+
+.formSearch{
+    margin: 30px 0;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid rgb(240, 233, 233)
+}
+
+.text_field {
+    padding: 8px; 
+    width: 20%; 
+    border-radius:5px ;
+}
+
+.submit {
+    padding: 8px; 
+    background-color: black; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    border-radius:5px
+}
+
+.score {
+    margin: 20px 0; 
+    padding: 20px; 
+    background-color: white; 
+    border-radius: 10px;
+    border: 2px solid rgb(240, 233, 233)
+
+}
+.result p {
+    margin-bottom: 15px;
+}
+
+.top-group{
+    margin: 30px 30px;
+    width: 80%;
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+th {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+th, td {
+    padding: 15px;
+}
+tr:hover {background-color: coral;}
+
+.chart {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    width: 80%;
+    margin-top: 20px;
+  }
+  
+  .barchart {
+    width: 80%; /* Hoặc giá trị cụ thể như 800px */
+    height: 500px; /* Tăng chiều cao nếu cần */
+ 
+  }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "style", media: "all", "data-turbo-track": "reload" %>
+  <title>Document</title>
+</head>
+<body>
+  
+<div class="container" >
+
+  <div class="title" >
+      <h2>G-Scores</h2>
+  </div>
+  
+  <div class="main" >
+    
+    <div class="SideBar">
+      <h3 style="font-weight: bold;">Menu</h3>
+      <ul >
+        <li><a href="/dashboard" >Dashboard</a></li>
+        <li><a href="/" style="font-weight: bold;">Search Scores</a></li>
+        <li><a href="/report" >Reports</a></li>
+      </ul>
+    </div>
+
+    <div class="maininfo">
+      <div class = "formSearch">
+        <h1 style="font-weight: bold; margin-bottom:30px">User Registration</h1>
+        <p style="margin-bottom:20px">Registration Number:</p>
+        <%= form_with(url: "/getScore", method: :get, local: true) do |form| %>
+          <div>
+            <%= form.text_field :sbd, placeholder: "Enter registration number", class:"text_field"  %>
+            <%= form.submit "Submit", class:"submit" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="score" >
+        <h1 style="font-weight: bold; margin-bottom:30px" >Detailed Scores</h1>
+        <h3 style="margin-bottom:20px;">Detailed view of search scores here!</h3>
+        <div class="result">
+        <% if @student %>
+          <p><strong>Số Báo Danh:</strong> <%= @student.sbd %></p>
+          <p><strong>Toán: </strong> <%= @student.toan %></p>
+          <p><strong>Ngu Van: </strong> <%= @student.ngu_van %></p>
+          <p><strong>Ngoai Ngu: </strong> <%= @student.ngoai_ngu %></p>
+          <p><strong>Ma Ngoai Ngu: </strong> <%= @student.ma_ngoai_ngu %></p>
+          <%if @student.vat_li or @student.hoa_hoc or @student.sinh_hoc%>
+            <p><strong>Vật Lý: </strong> <%= @student.vat_li %></p>
+            <p><strong>Hóa Học: </strong> <%= @student.hoa_hoc %></p>
+            <p><strong>Sinh Học: </strong> <%= @student.sinh_hoc %></p>
+          <%else%>
+            <p><strong>Lich Su: </strong> <%= @student.lich_su %></p>
+            <p><strong>Dia Li: </strong> <%= @student.dia_li %></p>
+            <p><strong>GDCD: </strong> <%= @student.gdcd %></p>
+          <%end%>
+          
+        <% elsif @error %>
+          <p><%= @error %></p>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

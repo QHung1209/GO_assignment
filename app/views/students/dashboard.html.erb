@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "style", media: "all", "data-turbo-track": "reload" %>
+  <title>Document</title>
+</head>
+<body>
+  
+<div class="container" >
+
+  <div class="title" >
+      <h2>G-Scores</h2>
+  </div>
+  
+
+  <div class="main" >
+    
+    <div class="SideBar">
+      <h3 style="font-weight: bold;">Menu</h3>
+      <ul >
+        <li><a href="/dashboard" style="font-weight: bold;">Dashboard</a></li>
+        <li><a href="/" >Search Scores</a></li>
+        <li><a href="/report" >Reports</a></li>
+      </ul>
+    </div>
+
+    <div class="top-group">
+        <table border="1" cellspacing="0" cellpadding="8" style="width: 100%; border-collapse: collapse;">
+          <thead style="background-color: #f2f2f2;">
+            <tr>
+              <th>SBD</th>
+              <th>Toán</th>
+              <th>Vật Lý</th>
+              <th>Hóa Học</th>
+              <th>Ngữ Văn</th>
+              <th>Ngoại Ngữ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @top_10_students.each do |student| %>
+              <tr>
+                <td><%= student.sbd %></td>
+                <td><%= student.toan %></td>
+                <td><%= student.vat_li %></td>
+                <td><%= student.hoa_hoc %></td>
+                <td><%= student.ngu_van %></td>
+                <td><%= student.ngoai_ngu.present? ? student.ngoai_ngu : 'N/A' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>
