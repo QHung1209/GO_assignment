@@ -1,25 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Follow the steps below to run this Ruby on Rails project locally:
 
-Things you may want to cover:
+### 1. Clone the project
 
-* Ruby version
+git clone https://github.com/your-username/your-project.git
 
-* System dependencies
+### 2. Install dependencies
 
-* Configuration
+bulde install
 
-* Database creation
+### 3. Add database in config/environments/
 
-* Database initialization
+ENV['DATABASE_URL'] = your_database_url
 
-* How to run the test suite
+### 4. Config database and insert data
 
-* Services (job queues, cache servers, search engines, etc.)
+rails db:create
+rails db:migrate
+rails db:seed
 
-* Deployment instructions
+### 5. Start server
 
-* ...
+rails server
+
 # GO_assignment

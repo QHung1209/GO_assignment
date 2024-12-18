@@ -10,7 +10,6 @@
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
 ARG RUBY_VERSION=3.2.3
 FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
-
 # Rails app lives here
 WORKDIR /rails
 
@@ -68,5 +67,8 @@ USER 1000:1000
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Start server via Thruster by default, this can be overwritten at runtime
-EXPOSE 80
-CMD ["./bin/thrust", "./bin/rails", "server"]
+# Expose cổng 3000 thay vì 80, vì Puma sẽ lắng nghe trên cổng 3000
+EXPOSE 3000
+
+# Lệnh CMD để chạy server, có thể thay đổi khi cần thiết
+CMD ["./bin/rails", "server", "-b", "0.0.0.0", "-p", "3000"]

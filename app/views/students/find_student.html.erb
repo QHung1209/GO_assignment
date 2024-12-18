@@ -44,16 +44,16 @@
         <% if @student %>
           <p><strong>Số Báo Danh:</strong> <%= @student.sbd %></p>
           <p><strong>Toán: </strong> <%= @student.toan %></p>
-          <p><strong>Ngu Van: </strong> <%= @student.ngu_van %></p>
-          <p><strong>Ngoai Ngu: </strong> <%= @student.ngoai_ngu %></p>
-          <p><strong>Ma Ngoai Ngu: </strong> <%= @student.ma_ngoai_ngu %></p>
+          <p><strong>Ngữ Văn: </strong> <%= @student.ngu_van %></p>
+          <p><strong>Ngoại Ngữ: </strong> <%= @student.ngoai_ngu %></p>
+          <p><strong>Mã Ngoại Ngữ: </strong> <%= @student.ma_ngoai_ngu %></p>
           <%if @student.vat_li or @student.hoa_hoc or @student.sinh_hoc%>
             <p><strong>Vật Lý: </strong> <%= @student.vat_li %></p>
             <p><strong>Hóa Học: </strong> <%= @student.hoa_hoc %></p>
             <p><strong>Sinh Học: </strong> <%= @student.sinh_hoc %></p>
           <%else%>
-            <p><strong>Lich Su: </strong> <%= @student.lich_su %></p>
-            <p><strong>Dia Li: </strong> <%= @student.dia_li %></p>
+            <p><strong>Lịch Sử: </strong> <%= @student.lich_su %></p>
+            <p><strong>Địa Lý: </strong> <%= @student.dia_li %></p>
             <p><strong>GDCD: </strong> <%= @student.gdcd %></p>
           <%end%>
           
