@@ -3,6 +3,9 @@
     padding:0;
 }
 
+body {
+    font-family: 'Nunito', sans-serif;
+  }
 .container {
     height: 100vh;
 }
@@ -63,8 +66,8 @@
 }
 
 .text_field {
+    width: 25%;
     padding: 8px; 
-    width: 20%; 
     border-radius:5px ;
 }
 
@@ -113,21 +116,20 @@ tr:hover {background-color: coral;}
   }
   
 
-  /* Media Query cho màn hình nhỏ hơn 768px (Mobile) */
 @media (max-width: 768px) {
     .container {
         display: flex;
-        flex-direction: column; /* Sắp xếp theo chiều dọc */
+        flex-direction: column; 
     }
 
     .SideBar {
-        width: auto; /* Đảm bảo Sidebar chiếm toàn bộ chiều ngang */
-        height: auto; /* Co giãn chiều cao nếu cần */
+        width: auto; 
+        height: auto; /
     }
 
     .main {
-        flex-direction: column; /* Nếu cần */
-        width: 100%; /* Chiếm toàn bộ chiều ngang */
+        flex-direction: column; 
+        width: 100%; 
     }
 
     .SideBar li {
@@ -135,7 +137,7 @@ tr:hover {background-color: coral;}
     }
 
     .SideBar {
-        font-size: 16px; /* Giảm kích thước chữ */
+        font-size: 16px; 
     }
 
     .top-group{
@@ -143,7 +145,11 @@ tr:hover {background-color: coral;}
     }
 
     .maininfo {
-        padding: 10px;
+        padding: 0;
+    }
+
+    .text_field{
+        width: 45%;
     }
 
     th, td {
@@ -161,23 +167,28 @@ tr:hover {background-color: coral;}
     }
 }
 
-/* Media Query cho màn hình nhỏ hơn 480px (Rất nhỏ) */
 @media (max-width: 480px) {
     .container {
         height: 100vh;
         display: flex;
-        flex-direction: column; /* Hàng dọc để dễ xếp chồng */
+        flex-direction: column; 
     }
     .SideBar h3 {
-        font-size: 20px; /* Giảm kích thước tiêu đề */
+        font-size: 20px; 
     }
 
     .SideBar {
         font-size: 14px;
     }
-
+    .text_field{
+        width: 45%;
+    }
     .title {
         font-size: 18px;
         padding: 10px;
+    }
+
+    .maininfo {
+        padding: 0;
     }
 }
