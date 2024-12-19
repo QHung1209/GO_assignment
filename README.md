@@ -16,9 +16,9 @@ ENV['DATABASE_URL'] = your_database_url
 
 ### 4. Config database and insert data
 
-rails db:create
-rails db:migrate
-rails db:seed
+- rails db:create
+- rails db:migrate
+- rails db:seed
 
 ### 5. Start server
 
