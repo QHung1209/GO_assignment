@@ -15,15 +15,12 @@ Rails.application.configure do
   # Turn on fragment caching in view templates.
   config.action_controller.perform_caching = true
 
-  ENV['DATABASE_URL'] ||= "mysql://root:BtjyqElnssfAkWYsYIKKdvesIlVpUcyJ@autorack.proxy.rlwy.net:35532/railway"
-
+  ENV['DATABASE_URL'] || 'your_url_database'
   # Cache assets for far-future expiry since they are all digest stamped.
   config.public_file_server.headers = { "cache-control" => "public, max-age=#{1.year.to_i}" }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
-  ENV["SECRET_KEY_BASE"] || Rails.application.credentials.secret_key_base ||credentials.secret_key_base || "837a85e5de21540e7aca26fa0f2470e54cb8db75b71782bfd9f6107fbbaa3b29be1e552dfb2d11cb725800fc2d98b28373cec53e307d1581492b2fd8b35444eb"
-
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
