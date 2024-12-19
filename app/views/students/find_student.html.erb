@@ -30,7 +30,7 @@
         <h1 style="font-weight: bold; margin-bottom:30px">User Registration</h1>
         <p style="margin-bottom:20px">Registration Number:</p>
         <%= form_with(url: "/getScore", method: :get, local: true) do |form| %>
-          <div>
+          <div class="enter">
             <%= form.text_field :sbd, placeholder: "Enter registration number", class:"text_field"  %>
             <%= form.submit "Submit", class:"submit" %>
           </div>
