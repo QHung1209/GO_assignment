@@ -22,7 +22,7 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
-  ENV["SECRET_KEY_BASE"] || credentials.secret_key_base || "837a85e5de21540e7aca26fa0f2470e54cb8db75b71782bfd9f6107fbbaa3b29be1e552dfb2d11cb725800fc2d98b28373cec53e307d1581492b2fd8b35444eb"
+  ENV["SECRET_KEY_BASE"] || Rails.application.credentials.secret_key_base ||credentials.secret_key_base || "837a85e5de21540e7aca26fa0f2470e54cb8db75b71782bfd9f6107fbbaa3b29be1e552dfb2d11cb725800fc2d98b28373cec53e307d1581492b2fd8b35444eb"
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
